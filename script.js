@@ -20,9 +20,13 @@
 
 const items = ["rock", "paper", "scissors"];
 
-let userScore;
+let userScore = 0;
 
-let computerScore;
+let computerScore = 0;
+
+let userSelection = getUserSelection();
+
+let computerSelection = getComputerSelection();
 
 function getComputerSelection() {
     return items[Math.floor(Math.random() * items.length)];
@@ -32,30 +36,53 @@ function getUserSelection() {
     return prompt("Make a selection of rock, paper, or scissors.",).toLowerCase();
 }
 
+function showTotalScore() {
+    return `User Score: ${userScore}\nComputer Score: ${computerScore}`;
+}
+
 function playRound(userSelection, computerSelection) {
     if (userSelection === computerSelection) {
-        return `Both parties selected ${userSelection}!\n\nUser Score: ${userScore}\nComputer Score: ${computerScore}`
-    } else if (userSelection === "rock" && computerSelection === "scissors") {
-        return `You win! The computer selected ${computerSelection}. One point has been added to your score.\n\nUser Score: ${userScore}\nComputer Score: ${computerScore}`;
-    } else if (userSelection === "rock" && computerSelection === "paper") {
-        return `You lose! The computer selected ${computerSelection}. One point has been added to the computer's score.\n\nUser Score: ${userScore}\nComputer Score: ${computerScore}`;
-    } else if (userSelection === "paper" && computerSelection === "rock") {
-        return `You win! The computer selected ${computerSelection}. One point has been added to your score.\n\nUser Score: ${userScore}\nComputer Score: ${computerScore}`;
-    } else if (userSelection === "paper" && computerSelection === "scissors") {
-        return `You lose! The computer selected ${computerSelection}. One point has been added to the computer's score.\n\nUser Score: ${userScore}\nComputer Score: ${computerScore}`;
-    } else if (userSelection === "scissors" && computerSelection === "paper") {
-        return `You win! The computer selected ${computerSelection}. One point has been added to your score.\n\nUser Score: ${userScore}\nComputer Score: ${computerScore}`;
-    } else if (userSelection === "scissors" && computerSelection === "rock") {
-        return `You lose! The computer selected ${computerSelection}. One point has been added to the computer's score.\n\nUser Score: ${userScore}\nComputer Score: ${computerScore}`;
+        console.log(`TIE!!! Both parties selected ${userSelection}!`);
+        return console.log(showTotalScore());
+    } else if (
+        (userSelection === "rock" && computerSelection === "scissors") ||
+        (userSelection === "paper" && computerSelection === "rock") ||
+        (userSelection === "scissors" && computerSelection === "paper")) {
+        userScore = userScore + 1;
+        console.log(`ROUND WON!!! The computer selected ${computerSelection}. One point has been added to your score.`);
+        return console.log(showTotalScore());
+    } else if (
+        (userSelection === "rock" && computerSelection === "paper") ||
+        (userSelection === "paper" && computerSelection === "scissors") ||
+        (userSelection === "scissors" && computerSelection === "rock")) {
+        computerScore = computerScore + 1;
+        console.log(`ROUND LOST!!! The computer selected ${computerSelection}. One point has been added to the computer's score.`);
+        return console.log(showTotalScore());
     } else {
-        return "Enter an appropriate choice.";
+        return console.log("Enter a valid choice.");
     }
 }
 
+function game() {
+    for (let round = 1; round < 5; round++) {
+        console.log(`---- ROUND ${round} ------------`);
+        playRound(userSelection, computerSelection);
+        console.log("\n");
+        computerSelection = getComputerSelection();
+        userSelection = getUserSelection();
+    }
 
+    // final round
+    console.log("---- ROUND 5 ------------");
+    playRound(userSelection, computerSelection);
+    console.log("\n");
+    if (userScore > computerScore) {
+        return console.log("YOU BEAT THE COMPUTER! REFRESH THE PAGE TO PLAY AGAIN.");
+    } else {
+        return console.log("THE COMPUTER BESTED YOU. REFRESH THE PAGE TO TRY AGAIN.");
+    }
+}
 
-const userSelection = getUserSelection();
+console.log("Welcome to a game of Rock, Paper, Scissors! Gain more points than he computer in five rounds to win.\n\n")
 
-const computerSelection = getComputerSelection();
-
-console.log(playRound(userSelection, computerSelection));
+console.log(game());
