@@ -79,10 +79,10 @@ function game() {
     if (userScore > computerScore) {
         return console.log("YOU BEAT THE COMPUTER! REFRESH THE PAGE TO PLAY AGAIN.");
     } else {
-        return console.log("THE COMPUTER BESTED YOU. REFRESH THE PAGE TO TRY AGAIN.");
+        return console.log("THE COMPUTER BESTED YOU! REFRESH THE PAGE TO TRY AGAIN.");
     }
 }
 
-console.log("Welcome to a game of Rock, Paper, Scissors! Gain more points than he computer in five rounds to win.\n\n")
+console.log("Welcome to a game of Rock, Paper, Scissors! Gain more points than the computer in five rounds to win.\n\n")
 
 console.log(game());
