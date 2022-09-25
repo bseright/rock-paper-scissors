@@ -33,7 +33,8 @@ function getComputerSelection() {
 }
 
 function getUserSelection() {
-    return prompt("Make a selection of rock, paper, or scissors.",).toLowerCase();
+    // return prompt("Make a selection of rock, paper, or scissors.",).toLowerCase();
+    // noting out prompt while UI is create - no longer needed
 }
 
 function showTotalScore() {
