@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bolder;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(-60deg, #f7b733 50%, #4abdac 50%);
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    height: 242px;
+    color: white;
+}
+
+#header h2 {
+    font-size: 2em;
+}
+
+#playerScore {
+    margin-left: 40px;
+}
+
+#cpuScore {
+    margin-right: 40px;
+}
+
+.score {
+    color: #fa673e00;
+    -webkit-text-stroke: 10px white;
+    font-size: 5em;
+}
+
+#arena {
+    display: flex;
+    gap: 110px;
+    flex: 1;
+}
+
+.arenaImage {
+    height: 15em;
+}
+
+#versus {
+    height: 15em;
+    transform: rotate(24deg);
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(287deg) brightness(105%) contrast(101%);
+}
+
+#buttons {
+    height: 100px;
+    gap: 50px;
+}
+
+.selection {
+    height: 8em;
+    transition: transform .7s ease-in-out;
+}
+
+.selection:hover {
+    transform: scale(1.1) rotate(360deg);
+}
+
+#status {
+    display: flex;
+    height: 150px;
+    color: white;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.loading:after {
+overflow: hidden;
+display: inline-block;
+vertical-align: bottom;
+-webkit-animation: ellipsis steps(4,end) 3s infinite;      
+animation: ellipsis steps(4,end) 3s infinite;
+content: "\2026"; /* ascii code for the ellipsis character */
+width: 0px;
+}
+
+@keyframes ellipsis {
+to {
+    width: 1.25em;    
+}
+}
+
+@-webkit-keyframes ellipsis {
+to {
+    width: 1.25em;    
+}
+}
