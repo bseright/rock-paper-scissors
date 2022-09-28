@@ -13,23 +13,35 @@
 
 <div id="wrapper">
     <div id="header">
-        <h2><span id="playerScore" class="score">0</span></h2>
-        <h2><span id="cpuScore" class="score">0</span></h2>
+        <div class="scoreboard">
+            <h2><span id="playerScore" class="score">0</span></h2>
+            <img class="scoreIcon" src="images/user.png"/>
+        </div>
+
+        <div id="me">
+            <h3>Rock Paper Scissors</h3>
+            <img src="images/github.png"/>
+            <h3>britainseright</h3>
+        </div>
+
+        <div class="scoreboard">
+            <img class="scoreIcon" src="images/cpu.png"/>
+            <h2><span id="cpuScore" class="score">0</span></h2>
+        </div>
     </div>
 
     <div id="arena" class="centered">
-        <img id="userPick" class="arenaImage" src="images/user.png"/>
+        <h1 class="blink">Make a selection</h1>
         <img id="versus" src="images/versus.png"/>
-        <img id="cpuPick" class="arenaImage" src="images/cpu.png"/>
+        <h1 class="blink">Waiting on CPU</h1>
     </div>
+
 
     <div id="buttons" class="centered">
         <img id="rock" class="selection" src="images/rock.png"/>
         <img id="paper" class="selection" src="images/paper.png"/>
         <img id="scissors" class="selection" src="images/scissors.png"/>
     </div>    
-
-    <div id="status"><h1 class="loading">Make a selection</h1></div>
 </div>
 
     <!-- <div id="footer"><a href="https://www.flaticon.com/free-icons/vs" title="vs icons">VS Icon by Erifqi Zetiawan</a></div> -->

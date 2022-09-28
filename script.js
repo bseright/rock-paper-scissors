@@ -87,3 +87,4 @@ function game() {
 console.log("Welcome to a game of Rock, Paper, Scissors! Gain more points than the computer in five rounds to win.\n\n")
 
 console.log(game());
+
