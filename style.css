@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: 'Varela Round', sans-serif;
-    font-weight: bolder;
 }
 
 #wrapper {
@@ -66,7 +65,7 @@ body {
 
 .score {
     color: #fa673e00;
-    -webkit-text-stroke: 10px white;
+    -webkit-text-stroke: 3px white;
     font-size: 5em;
 }
 
