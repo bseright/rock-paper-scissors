@@ -41,13 +41,14 @@ body {
 .scoreIcon {
     margin-top: 60px;
     height: 3em;
-    opacity: .6;
+    opacity: .9;
 }
 
 #me {
     display: flex;
     gap: 12px;
     font-size: .8em;
+    opacity: .9;
 }
 
 #me img {
@@ -65,7 +66,7 @@ body {
 
 .score {
     color: #fa673e00;
-    -webkit-text-stroke: 3px white;
+    -webkit-text-stroke: 6px white;
     font-size: 5em;
 }
 
@@ -109,6 +110,7 @@ body {
 
 #rock {
     margin-top: 32px;
+    margin-left: 30px;
 }
 
 .selection {
