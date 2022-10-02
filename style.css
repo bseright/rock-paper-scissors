@@ -56,17 +56,17 @@ body {
     margin-top: 10px;
 }
 
-#cpuScoreboard {
+#CPUScoreboard {
     display: flex;
 }
 
-#cpuScore {
+#CPUScore {
     margin-right: 40px;
 }
 
 .score {
     color: #fa673e00;
-    -webkit-text-stroke: 6px white;
+    -webkit-text-stroke: 12px white;
     font-size: 5em;
 }
 

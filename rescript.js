@@ -1,8 +1,5 @@
 const items = ["rock", "paper", "scissors"];
 
-let playerScore = 0;
-let CPUScore = 0;
-
 let CPUSelection = getCPUSelection();
 
 function getCPUSelection() {
@@ -10,6 +7,22 @@ function getCPUSelection() {
 }
 
 let playerSelection;
+
+let playerScore = 0;
+let CPUScore = 0;
+
+function changeScore() {
+    document.querySelector("#playerScore").innerHTML = playerScore;
+    document.querySelector("#CPUScore").innerHTML = CPUScore;
+}
+
+function removeStartText() {
+    let blinkingText = document.querySelectorAll(".blink");
+    
+    blinkingText.forEach(text => {
+        text.remove();
+    })
+}
 
 const buttons = document.querySelector("#buttons");
 
@@ -28,6 +41,7 @@ function getPlayerSelection(e) {
     } else {}
 
     CPUSelection = getCPUSelection();
+    removeStartText();
 }
 
 // need round to reset fresh with no player selection until another click is heard
@@ -48,4 +62,8 @@ function playRound(playerSelection, CPUSelection) {
         CPUScore = CPUScore + 1;
         console.log(`ROUND LOST!!! The CPU selected ${CPUSelection}. One point has been added to the CPU's score.`);
     } else {}
+
+    changeScore();
 }
+
+
