@@ -26,6 +26,7 @@ body {
 
 #header h2 {
     font-size: 2em;
+    font-weight: 500;
 }
 
 .scoreboard {
@@ -66,7 +67,7 @@ body {
 
 .score {
     color: #fa673e00;
-    -webkit-text-stroke: 12px white;
+    -webkit-text-stroke: 3px white;
     font-size: 5em;
 }
 
@@ -84,8 +85,8 @@ body {
     animation: fadeIn 1.1s infinite alternate;
 }
 
-#arenaRight {
-    margin-right: 17px;
+#arenaLeft {
+    margin-left: 5px;
 }
 
 @keyframes fadeIn { 
@@ -100,6 +101,10 @@ body {
     height: 15em;
     transform: rotate(24deg);
     filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(287deg) brightness(105%) contrast(101%);
+}
+
+.versusNoText {
+    margin-left: 13px;
 }
 
 #buttons {
@@ -122,8 +127,25 @@ body {
     transition: transform .3s ease-in-out;
 }
 
-.selection:hover {
+.hoverOnly:hover {
     transform: translateY(-50px);
+}
+
+.translateDown {
+    transition: transform .5s ease-in-out;
+    transform: translateY(300px);
+}
+
+.translateUp {
+    transform: translateY(-300px);
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: inline;
 }
 
 h1 {
