@@ -38,15 +38,18 @@ function toggleStartText() {
 function translateDown() {
     let selection = document.querySelectorAll(".selection");
     let remove = document.querySelectorAll(".hoverOnly");
-    let toggleDisplay = document.querySelectorAll(".selection");
-
-    selection.forEach(image => {
-        image.classList.toggle("translateDown");
-    })
 
     remove.forEach(image => {
         image.classList.toggle("hoverOnly");
     })
+
+    selection.forEach(image => {
+        image.classList.toggle("translateDown");
+    })
+}
+
+function hideSelection() {
+    let toggleDisplay = document.querySelectorAll(".selection");
 
     toggleDisplay.forEach(image => {
         image.classList.toggle("hidden");
@@ -56,26 +59,98 @@ function translateDown() {
 // show alert after selection transition 
 
 function showAlert() {
-    let alert = document.createElement("h1");
-    let updatedAlert = "";
 
-    let findWinner = function() {
-        if (roundWinner === "tie") {
-            updatedAlert = "Tie! Make another selection.";
-        } else if (roundWinner === "player") {
-            updatedAlert = "Round won! Make another selection.";
-        } else if (roundWinner === "CPU") {
-            updatedAlert = "Round lost! Make another selection.";
-        } else {}
+    const first = "Rock";
+    const second = "Paper";
+    const third = "Scissors";
+    const last = "Shoot!";
+
+    function removeFirstHeader() {
+        firstHeader.remove();
     }
 
-    findWinner();
+    function removeSecondHeader() {
+        secondHeader.remove();
+    }
 
-    let alertText = document.createTextNode(updatedAlert);
-    alert.appendChild(alertText);
+    function removeThirdHeader() {
+        thirdHeader.remove();
+    }
+
+    function removeLastHeader() {
+        lastHeader.remove();
+    }
+
+    // creating first header "Rock" with grow animation then hidden
+
+    let firstHeader = document.createElement("h1");
+
+    firstHeader.classList.add("growAlert");
+    
+    firstHeader.classList.add("countdown");
+
+    let firstAlert = document.createTextNode(first);
+    firstHeader.appendChild(firstAlert);
 
     let replaceButtons = document.querySelector("#buttons");
-    replaceButtons.appendChild(alert);
+    replaceButtons.appendChild(firstHeader);
+
+    setTimeout(removeFirstHeader, 550);
+
+    // second header "Paper"
+
+    let secondHeader = document.createElement("h1");
+
+    secondHeader.classList.add("growAlert");
+    
+    secondHeader.classList.add("countdown");
+
+    let secondAlert = document.createTextNode(second);
+    secondHeader.appendChild(secondAlert);
+
+    function secondReplace() {
+        replaceButtons.appendChild(secondHeader);
+    }
+
+    setTimeout(secondReplace, 650);
+
+    setTimeout(removeSecondHeader, 1200);
+
+    // third header "Scissors"
+
+    let thirdHeader = document.createElement("h1");
+    
+    thirdHeader.classList.add("growAlert");
+
+    thirdHeader.classList.add("countdown");
+
+    let thirdAlert = document.createTextNode(third);
+    thirdHeader.appendChild(thirdAlert);
+
+    function thirdReplace() {
+        replaceButtons.appendChild(thirdHeader);
+    }
+
+    setTimeout(thirdReplace, 1300);
+
+    setTimeout(removeThirdHeader, 1850);
+
+    // last header "Shoot!"
+
+    let lastHeader = document.createElement("h1");
+
+    lastHeader.classList.add("growAlert");
+    
+    lastHeader.classList.add("countdown");
+
+    let lastAlert = document.createTextNode(last);
+    lastHeader.appendChild(lastAlert);
+
+    function lastReplace() {
+        replaceButtons.appendChild(lastHeader);
+    }
+
+    setTimeout(lastReplace, 1950);
 }
 
 // play round upon player selection
@@ -99,7 +174,10 @@ function getPlayerSelection(e) {
     CPUSelection = getCPUSelection();
     toggleStartText();
     translateDown();
-    showAlert();
+
+    // the images translation off screen takes .4s - setting timeout of 400ms to avoid two elements in #buttons
+    setTimeout(hideSelection, 300);
+    setTimeout(showAlert, 300);
 }
 
 // need round to reset fresh with no player selection until another click is heard
