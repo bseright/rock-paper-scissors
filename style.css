@@ -104,11 +104,13 @@ body {
     -ms-transform: rotate(90deg) scaleX(-1);
     -o-transform: rotate(90deg) scaleX(-1);
     transform: rotate(90deg) scaleX(-1);
+    opacity: .8;
 }
 
 .CPUArena {
     filter: invert(91%) sepia(97%) saturate(280%) hue-rotate(331deg) brightness(300%) contrast(95%);
     transform: rotate(270deg);
+    opacity: .8;
 }
 
 @keyframes fadeIn { 
@@ -126,6 +128,7 @@ body {
     -o-transform: rotate(24deg);
     transform: rotate(24deg);
     filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(287deg) brightness(105%) contrast(101%);
+    opacity: .85;
 }
 
 .versusNoText {
