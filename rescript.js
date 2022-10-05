@@ -153,11 +153,67 @@ function showAlert() {
     setTimeout(lastReplace, 1950);
 }
 
+function showPlayerSelection() {
+    if (playerSelection === "rock") {
+        let playerRock = document.createElement("img");
+        playerRock.src = "images/rockArena.png";
+
+        playerRock.classList.add("playerArena");
+
+        let arena = document.querySelector("#arena");
+        arena.prepend(playerRock);
+    } else if (playerSelection === "paper") {
+        let playerPaper = document.createElement("img");
+        playerPaper.src = "images/paperArena.png";
+
+        playerPaper.classList.add("playerArena");
+
+        let arena = document.querySelector("#arena");
+        arena.prepend(playerPaper);
+    } else {
+        let playerScissors = document.createElement("img");
+        playerScissors.src = "images/scissorsArena.png";
+
+        playerScissors.classList.add("playerArena");
+
+        let arena = document.querySelector("#arena");
+        arena.prepend(playerScissors);
+    }
+}
+
+function showCPUSelection() {
+    if (CPUSelection === "rock") {
+        let CPURock = document.createElement("img");
+        CPURock.src = "images/rockArena.png";
+
+        CPURock.classList.add("CPUArena");
+
+        let arena = document.querySelector("#arena");
+        arena.append(CPURock);
+    } else if (CPUSelection === "paper") {
+        let CPUPaper = document.createElement("img");
+        CPUPaper.src = "images/paperArena.png";
+
+        CPUPaper.classList.add("CPUArena");
+
+        let arena = document.querySelector("#arena");
+        arena.append(CPUPaper);
+    } else {
+        let CPUScissors = document.createElement("img");
+        CPUScissors.src = "images/scissorsArena.png";
+
+        CPUScissors.classList.add("CPUArena");
+
+        let arena = document.querySelector("#arena");
+        arena.append(CPUScissors);
+    }
+}
+
 // play round upon player selection
 
 const buttons = document.querySelector("#buttons");
 
-buttons.addEventListener("click", getPlayerSelection);
+buttons.addEventListener("click", getPlayerSelection, {once: true});
 
 function getPlayerSelection(e) {
     if (e.target.matches("#rock")) {
@@ -178,6 +234,9 @@ function getPlayerSelection(e) {
     // the images translation off screen takes .4s - setting timeout of 400ms to avoid two elements in #buttons
     setTimeout(hideSelection, 300);
     setTimeout(showAlert, 300);
+    setTimeout(changeScore, 2250);
+    setTimeout(showPlayerSelection, 2250);
+    setTimeout(showCPUSelection, 2250);
 }
 
 // need round to reset fresh with no player selection until another click is heard
@@ -201,8 +260,6 @@ function playRound(playerSelection, CPUSelection) {
         console.log(`ROUND LOST!!! The CPU selected ${CPUSelection}. One point has been added to the CPU's score.`);
         roundWinner = "CPU";
     } else {}
-
-    changeScore();
 }
 
 
