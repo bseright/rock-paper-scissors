@@ -204,6 +204,12 @@ body {
     to {font-size: 7em;}
 }
 
+img {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 h1 {
     margin: 0;
     padding: 0;
