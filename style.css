@@ -25,7 +25,6 @@ body {
 }
 
 #header h2 {
-    font-size: 2em;
     font-weight: 500;
 }
 
@@ -74,6 +73,15 @@ body {
     -webkit-text-stroke: 6px white;
     -ms-text-stroke: 6px white;
     -o-text-stroke: 6px white;
+    font-size: 7em;
+    transition: all .4s ease-out;
+}
+
+.shrinkScore {
+    opacity: 0;
+}
+
+.growScore {
     font-size: 5em;
 }
 
@@ -81,6 +89,10 @@ body {
     display: flex;
     gap: 150px;
     flex: 1;
+}
+
+@keyframes fadeIn { 
+    from {opacity: 0} 
 }
 
 #arena h1 {
@@ -111,10 +123,6 @@ body {
     filter: invert(91%) sepia(97%) saturate(280%) hue-rotate(331deg) brightness(300%) contrast(95%);
     transform: rotate(270deg);
     opacity: .8;
-}
-
-@keyframes fadeIn { 
-    from {opacity: 0} 
 }
 
 .arenaImage {

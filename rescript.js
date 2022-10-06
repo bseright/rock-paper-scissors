@@ -13,12 +13,43 @@ let roundWinner;
 let playerScore = 0;
 let CPUScore = 0;
 
+function changeScore() {
+    let grabElement;
+    let grabScores;
+
+    // begin transition to transparency 
+    function addOpacity() {document.querySelector(grabElement).classList.add("shrinkScore")}
+
+    // change score when transparent
+    function newScore() {document.querySelector(grabElement).innerHTML = grabScores}
+
+    // begin transition to opaque
+    function removeOpacity() {document.querySelector(grabElement).classList.remove("shrinkScore")};
+
+    if (roundWinner === "player") {
+
+        grabElement = "#playerScore";
+        grabScores = playerScore;
+       
+        addOpacity();
+        setTimeout(removeOpacity, 100);
+        setTimeout(newScore, 100);
+
+    } else if (roundWinner === "CPU") {
+
+        grabElement = "#CPUScore";
+        grabScores = CPUScore;
+       
+        addOpacity();
+        setTimeout(removeOpacity, 100);
+        setTimeout(newScore, 100);
+
+    } else {}
+}
+
 // begin js animations
 
-function changeScore() {
-    document.querySelector("#playerScore").innerHTML = playerScore;
-    document.querySelector("#CPUScore").innerHTML = CPUScore;
-}
+// apply gradient filter over vs image
 
 function toggleStartText() {
     let blinkingText = document.querySelectorAll(".blink");
@@ -227,7 +258,6 @@ function getPlayerSelection(e) {
         playRound(playerSelection, CPUSelection);
     } else {}
 
-    CPUSelection = getCPUSelection();
     toggleStartText();
     translateDown();
 
@@ -237,6 +267,8 @@ function getPlayerSelection(e) {
     setTimeout(changeScore, 2250);
     setTimeout(showPlayerSelection, 2250);
     setTimeout(showCPUSelection, 2250);
+
+    setTimeout(getCPUSelection, 2275);
 }
 
 // need round to reset fresh with no player selection until another click is heard
