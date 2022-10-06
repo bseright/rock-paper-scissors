@@ -48,10 +48,12 @@ body {
     display: flex;
     gap: 12px;
     font-size: .8em;
+    opacity: .65;
 }
 
 #me h3 {
-    font-weight: 550;
+    font-weight: bold;
+    font-size: 1.1em;
     color: #2C6A5F;
 }
 
@@ -61,7 +63,7 @@ a {
 }
 
 #me img {
-    height: 2em;
+    height: 1.6em;
     margin-top: 10px;
     filter: invert(71%) sepia(65%) saturate(339%) hue-rotate(120deg) brightness(82%) contrast(92%);
     opacity: .8;
@@ -128,7 +130,7 @@ a {
     100% {
         -webkit-transform: translateX(0) rotate(90deg) scaleX(-1);
         transform: translateX(0) rotate(90deg) scaleX(-1);
-        opacity: .8;
+        opacity: .7;
     }
 }
 
@@ -147,7 +149,7 @@ a {
     100% {
         -webkit-transform: translateX(0) rotate(-90deg);
         transform: translateX(0) rotate(-90deg);
-        opacity: .8;
+        opacity: .7;
     }
 }
 
@@ -221,9 +223,9 @@ a {
 
 .countdown {
     color: #fa673e00;
-    -webkit-text-stroke: 3px white;
-    -ms-text-stroke: 3px white;
-    -o-text-stroke: 3px white;
+    -webkit-text-stroke: 1px white;
+    -ms-text-stroke: 1px white;
+    -o-text-stroke: 1px white;
     font-size: 7em;
     text-transform: uppercase;
     margin-top: 45px;
