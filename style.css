@@ -46,9 +46,14 @@ body {
 
 #me {
     display: flex;
-    gap: 12px;
+    gap: 22px;
     font-size: .8em;
     opacity: .65;
+    margin-top: 5px;
+}
+
+#me h3:first-child {
+    margin-left: -22px;
 }
 
 #me h3 {
