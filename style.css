@@ -115,17 +115,40 @@ a {
 
 .playerArena {
     filter: invert(71%) sepia(65%) saturate(339%) hue-rotate(120deg) brightness(82%) contrast(92%);
-    -webkit-transform: rotate(90deg) scaleX(-1);
-    -ms-transform: rotate(90deg) scaleX(-1);
-    -o-transform: rotate(90deg) scaleX(-1);
-    transform: rotate(90deg) scaleX(-1);
-    opacity: .8;
+    -webkit-animation: fromLeft 0.5s both;
+    animation: fromLeft 0.5s both;
+}
+
+@keyframes fromLeft {
+    0% {
+        -webkit-transform: translateX(-300px) scaleX(-1);
+        transform: translateX(-300px) scaleX(-1);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) rotate(90deg) scaleX(-1);
+        transform: translateX(0) rotate(90deg) scaleX(-1);
+        opacity: .8;
+    }
 }
 
 .CPUArena {
     filter: invert(91%) sepia(97%) saturate(280%) hue-rotate(331deg) brightness(300%) contrast(95%);
-    transform: rotate(270deg);
-    opacity: .8;
+    -webkit-animation: fromRight 0.5s both;
+    animation: fromRight 0.5s both;
+}
+
+@keyframes fromRight {
+    0% {
+        -webkit-transform: translateX(300px);
+        transform: translateX(300px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) rotate(-90deg);
+        transform: translateX(0) rotate(-90deg);
+        opacity: .8;
+    }
 }
 
 .arenaImage {
