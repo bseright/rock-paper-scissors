@@ -18,13 +18,13 @@ function changeScore() {
     let grabScores;
 
     // begin transition to transparency 
-    function addOpacity() {document.querySelector(grabElement).classList.add("shrinkScore")}
+    function addOpacity() {document.querySelector(grabElement).classList.add("fadeOut")}
 
     // change score when transparent
     function newScore() {document.querySelector(grabElement).innerHTML = grabScores}
 
     // begin transition to opaque
-    function removeOpacity() {document.querySelector(grabElement).classList.remove("shrinkScore")};
+    function removeOpacity() {document.querySelector(grabElement).classList.remove("fadeOut")};
 
     if (roundWinner === "player") {
 
@@ -52,6 +52,7 @@ function changeScore() {
 // apply gradient filter over vs image
 
 function toggleStartText() {
+
     let blinkingText = document.querySelectorAll(".blink");
     let nudgeRight = document.querySelector("#versus");
    
@@ -60,7 +61,6 @@ function toggleStartText() {
     })
 
     // center alignment is off with blinking text removed - repositioning here
-
     nudgeRight.classList.toggle("versusNoText");
 }
 
@@ -144,7 +144,6 @@ function showAlert() {
     }
 
     setTimeout(secondReplace, 650);
-
     setTimeout(removeSecondHeader, 1200);
 
     // third header "Scissors"
@@ -163,7 +162,6 @@ function showAlert() {
     }
 
     setTimeout(thirdReplace, 1300);
-
     setTimeout(removeThirdHeader, 1850);
 
     // last header "Shoot!"
@@ -184,8 +182,12 @@ function showAlert() {
     setTimeout(lastReplace, 1950);
 }
 
+// append and animate player and CPU selection 
+
 function showPlayerSelection() {
+
     if (playerSelection === "rock") {
+
         let playerRock = document.createElement("img");
         playerRock.src = "images/rockArena.png";
 
@@ -193,7 +195,9 @@ function showPlayerSelection() {
 
         let arena = document.querySelector("#arena");
         arena.prepend(playerRock);
+
     } else if (playerSelection === "paper") {
+
         let playerPaper = document.createElement("img");
         playerPaper.src = "images/paperArena.png";
 
@@ -201,7 +205,9 @@ function showPlayerSelection() {
 
         let arena = document.querySelector("#arena");
         arena.prepend(playerPaper);
+
     } else {
+
         let playerScissors = document.createElement("img");
         playerScissors.src = "images/scissorsArena.png";
 
@@ -213,7 +219,9 @@ function showPlayerSelection() {
 }
 
 function showCPUSelection() {
+
     if (CPUSelection === "rock") {
+
         let CPURock = document.createElement("img");
         CPURock.src = "images/rockArena.png";
 
@@ -221,7 +229,9 @@ function showCPUSelection() {
 
         let arena = document.querySelector("#arena");
         arena.append(CPURock);
+
     } else if (CPUSelection === "paper") {
+
         let CPUPaper = document.createElement("img");
         CPUPaper.src = "images/paperArena.png";
 
@@ -229,7 +239,9 @@ function showCPUSelection() {
 
         let arena = document.querySelector("#arena");
         arena.append(CPUPaper);
+
     } else {
+
         let CPUScissors = document.createElement("img");
         CPUScissors.src = "images/scissorsArena.png";
 
@@ -247,15 +259,20 @@ const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", getPlayerSelection, {once: true});
 
 function getPlayerSelection(e) {
+
     if (e.target.matches("#rock")) {
+
         playerSelection = "rock";
         playRound(playerSelection, CPUSelection);
+
     } else if (e.target.matches("#paper")) {
         playerSelection = "paper";
         playRound(playerSelection, CPUSelection);
+
     } else if (e.target.matches("#scissors")) {
         playerSelection = "scissors";
         playRound(playerSelection, CPUSelection);
+
     } else {}
 
     toggleStartText();
@@ -274,16 +291,21 @@ function getPlayerSelection(e) {
 // need round to reset fresh with no player selection until another click is heard
 
 function playRound(playerSelection, CPUSelection) {
+
     if (playerSelection === CPUSelection) {
+
         console.log(`TIE!!! Both parties selected ${playerSelection}!`);
         roundWinner = "tie";
+
     } else if (
+
         (playerSelection === "rock" && CPUSelection === "scissors") ||
         (playerSelection === "paper" && CPUSelection === "rock") ||
         (playerSelection === "scissors" && CPUSelection === "paper")) {
         playerScore = playerScore + 1;
         console.log(`ROUND WON!!! The CPU selected ${CPUSelection}. One point has been added to your score.`);
         roundWinner = "player";
+
     } else if (
         (playerSelection === "rock" && CPUSelection === "paper") ||
         (playerSelection === "paper" && CPUSelection === "scissors") ||
@@ -291,6 +313,7 @@ function playRound(playerSelection, CPUSelection) {
         CPUScore = CPUScore + 1;
         console.log(`ROUND LOST!!! The CPU selected ${CPUSelection}. One point has been added to the CPU's score.`);
         roundWinner = "CPU";
+
     } else {}
 }
 
