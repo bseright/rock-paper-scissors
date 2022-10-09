@@ -191,7 +191,8 @@ function showPlayerSelection() {
         let playerRock = document.createElement("img");
         playerRock.src = "images/rockArena.png";
 
-        playerRock.classList.add("playerArena");
+        playerRock.classList.toggle("playerArena");
+        playerRock.classList.add("fromLeft");
 
         let arena = document.querySelector("#arena");
         arena.prepend(playerRock);
@@ -201,7 +202,8 @@ function showPlayerSelection() {
         let playerPaper = document.createElement("img");
         playerPaper.src = "images/paperArena.png";
 
-        playerPaper.classList.add("playerArena");
+        playerPaper.classList.toggle("playerArena");
+        playerPaper.classList.add("fromLeft");
 
         let arena = document.querySelector("#arena");
         arena.prepend(playerPaper);
@@ -211,7 +213,8 @@ function showPlayerSelection() {
         let playerScissors = document.createElement("img");
         playerScissors.src = "images/scissorsArena.png";
 
-        playerScissors.classList.add("playerArena");
+        playerScissors.classList.toggle("playerArena");
+        playerScissors.classList.add("fromLeft");
 
         let arena = document.querySelector("#arena");
         arena.prepend(playerScissors);
@@ -225,7 +228,8 @@ function showCPUSelection() {
         let CPURock = document.createElement("img");
         CPURock.src = "images/rockArena.png";
 
-        CPURock.classList.add("CPUArena");
+        CPURock.classList.toggle("CPUArena");
+        CPURock.classList.add("fromRight");
 
         let arena = document.querySelector("#arena");
         arena.append(CPURock);
@@ -235,7 +239,8 @@ function showCPUSelection() {
         let CPUPaper = document.createElement("img");
         CPUPaper.src = "images/paperArena.png";
 
-        CPUPaper.classList.add("CPUArena");
+        CPUPaper.classList.toggle("CPUArena");
+        CPUPaper.classList.add("fromRight");
 
         let arena = document.querySelector("#arena");
         arena.append(CPUPaper);
@@ -245,11 +250,29 @@ function showCPUSelection() {
         let CPUScissors = document.createElement("img");
         CPUScissors.src = "images/scissorsArena.png";
 
-        CPUScissors.classList.add("CPUArena");
+        CPUScissors.classList.toggle("CPUArena");
+        CPUScissors.classList.add("fromRight");
 
         let arena = document.querySelector("#arena");
         arena.append(CPUScissors);
     }
+}
+
+// hide player and CPU selection 
+
+function hideLastPlay() {
+    let lastPlayer = document.querySelector(".fromLeft");
+    lastPlayer.classList.toggle("reverseFromLeft");
+
+    let lastCPU = document.querySelector(".fromRight");
+    lastCPU.classList.toggle("reverseFromRight");
+
+    function hideBothPlays() {
+        lastPlayer.classList.toggle("hidden");
+        lastCPU.classList.toggle("hidden");
+    }
+
+    setTimeout(hideBothPlays, 500);
 }
 
 // play round upon player selection
@@ -284,8 +307,12 @@ function getPlayerSelection(e) {
     setTimeout(changeScore, 2250);
     setTimeout(showPlayerSelection, 2250);
     setTimeout(showCPUSelection, 2250);
+    setTimeout(hideLastPlay, 4500);
 
-    setTimeout(getCPUSelection, 2275);
+    setTimeout(getCPUSelection, 4525);
+
+
+
 }
 
 // need round to reset fresh with no player selection until another click is heard

@@ -125,10 +125,13 @@ a {
 }
 
 .playerArena {
-    filter: invert(71%) sepia(65%) saturate(339%) hue-rotate(120deg) brightness(82%) contrast(92%);
+    filter: invert(71%) sepia(65%) saturate(339%) hue-rotate(120deg) brightness(82%) contrast(92%); 
+    height: 15.5em;
+}
+
+.fromLeft {
     -webkit-animation: fromLeft 0.5s both;
     animation: fromLeft 0.5s both;
-    height: 15.5em;
 }
 
 @keyframes fromLeft {
@@ -144,11 +147,32 @@ a {
     }
 }
 
+.reverseFromLeft {
+    -webkit-animation: reverseFromLeft 0.5s both;
+    animation: reverseFromLeft 0.5s both;
+}
+
+@keyframes reverseFromLeft {
+    100% {
+        -webkit-transform: translateX(-300px) scaleX(-1);
+        transform: translateX(-300px) scaleX(-1);
+        opacity: 0;
+    }
+    0% {
+        -webkit-transform: translateX(0) rotate(90deg) scaleX(-1);
+        transform: translateX(0) rotate(90deg) scaleX(-1);
+        opacity: .7;
+    }
+}
+
 .CPUArena {
     filter: invert(91%) sepia(97%) saturate(280%) hue-rotate(331deg) brightness(300%) contrast(95%);
+    height: 15.5em;   
+}
+
+.fromRight {
     -webkit-animation: fromRight 0.5s both;
     animation: fromRight 0.5s both;
-    height: 15.5em;   
 }
 
 @keyframes fromRight {
@@ -158,6 +182,24 @@ a {
         opacity: 0;
     }
     100% {
+        -webkit-transform: translateX(0) rotate(-90deg);
+        transform: translateX(0) rotate(-90deg);
+        opacity: .7;
+    }
+}
+
+.reverseFromRight {
+    -webkit-animation: reverseFromRight 0.5s both;
+    animation: reverseFromRight 0.5s both;
+}
+
+@keyframes reverseFromRight {
+    100% {
+        -webkit-transform: translateX(300px);
+        transform: translateX(300px);
+        opacity: 0;
+    }
+    0% {
         -webkit-transform: translateX(0) rotate(-90deg);
         transform: translateX(0) rotate(-90deg);
         opacity: .7;
