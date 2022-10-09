@@ -79,6 +79,18 @@ function translateDown() {
     })
 }
 
+function translateUp() {
+    let selection = document.querySelectorAll(".selection");
+
+    selection.forEach(image => {
+        image.classList.toggle("translateDown");
+    })
+
+    selection.forEach(image => {
+        image.classList.toggle("hoverOnly");
+    })    
+}
+
 function hideSelection() {
     let toggleDisplay = document.querySelectorAll(".selection");
 
@@ -180,6 +192,19 @@ function showAlert() {
     }
 
     setTimeout(lastReplace, 1950);
+}
+
+// remove SHOOT after one round of play
+
+function removeCountdown() {
+    let countdown = document.querySelector(".countdown");
+    countdown.classList.toggle("fadeCountdown");
+
+    function hideCountdown() {
+        countdown.classList.toggle("hidden");
+    }
+
+    setTimeout(hideCountdown, 500);
 }
 
 // append and animate player and CPU selection 
@@ -304,14 +329,16 @@ function getPlayerSelection(e) {
     // the images translation off screen takes .4s - setting timeout of 400ms to avoid two elements in #buttons
     setTimeout(hideSelection, 300);
     setTimeout(showAlert, 300);
-    setTimeout(changeScore, 2250);
     setTimeout(showPlayerSelection, 2250);
     setTimeout(showCPUSelection, 2250);
+    setTimeout(changeScore, 4000);
     setTimeout(hideLastPlay, 4500);
 
     setTimeout(getCPUSelection, 4525);
 
-
+    setTimeout(removeCountdown, 4700);
+    setTimeout(hideSelection, 5200);
+    setTimeout(translateUp, 5300);
 
 }
 

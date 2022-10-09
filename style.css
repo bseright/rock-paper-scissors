@@ -292,6 +292,20 @@ a {
     to {font-size: 7em;}
 }
 
+.fadeCountdown {
+    -webkit-animation: fadeCountdown .5s both;
+    animation: fadeCountdown .5s both;
+}
+
+@keyframes fadeCountdown {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 img {
     -webkit-user-drag: none;
     -webkit-user-select: none;
