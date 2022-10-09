@@ -201,7 +201,7 @@ function removeCountdown() {
     countdown.classList.toggle("fadeCountdown");
 
     function hideCountdown() {
-        countdown.classList.toggle("hidden");
+        countdown.remove();
     }
 
     setTimeout(hideCountdown, 500);
@@ -217,7 +217,7 @@ function showPlayerSelection() {
         playerRock.src = "images/rockArena.png";
 
         playerRock.classList.toggle("playerArena");
-        playerRock.classList.add("fromLeft");
+        playerRock.classList.toggle("fromLeft");
 
         let arena = document.querySelector("#arena");
         arena.prepend(playerRock);
@@ -228,7 +228,7 @@ function showPlayerSelection() {
         playerPaper.src = "images/paperArena.png";
 
         playerPaper.classList.toggle("playerArena");
-        playerPaper.classList.add("fromLeft");
+        playerPaper.classList.toggle("fromLeft");
 
         let arena = document.querySelector("#arena");
         arena.prepend(playerPaper);
@@ -239,7 +239,7 @@ function showPlayerSelection() {
         playerScissors.src = "images/scissorsArena.png";
 
         playerScissors.classList.toggle("playerArena");
-        playerScissors.classList.add("fromLeft");
+        playerScissors.classList.toggle("fromLeft");
 
         let arena = document.querySelector("#arena");
         arena.prepend(playerScissors);
@@ -254,7 +254,7 @@ function showCPUSelection() {
         CPURock.src = "images/rockArena.png";
 
         CPURock.classList.toggle("CPUArena");
-        CPURock.classList.add("fromRight");
+        CPURock.classList.toggle("fromRight");
 
         let arena = document.querySelector("#arena");
         arena.append(CPURock);
@@ -265,7 +265,7 @@ function showCPUSelection() {
         CPUPaper.src = "images/paperArena.png";
 
         CPUPaper.classList.toggle("CPUArena");
-        CPUPaper.classList.add("fromRight");
+        CPUPaper.classList.toggle("fromRight");
 
         let arena = document.querySelector("#arena");
         arena.append(CPUPaper);
@@ -276,7 +276,7 @@ function showCPUSelection() {
         CPUScissors.src = "images/scissorsArena.png";
 
         CPUScissors.classList.toggle("CPUArena");
-        CPUScissors.classList.add("fromRight");
+        CPUScissors.classList.toggle("fromRight");
 
         let arena = document.querySelector("#arena");
         arena.append(CPUScissors);
@@ -286,10 +286,10 @@ function showCPUSelection() {
 // hide player and CPU selection 
 
 function hideLastPlay() {
-    let lastPlayer = document.querySelector(".fromLeft");
+    let lastPlayer = document.querySelector("#arena img:first-child");
     lastPlayer.classList.toggle("reverseFromLeft");
 
-    let lastCPU = document.querySelector(".fromRight");
+    let lastCPU = document.querySelector("#arena img:last-child");
     lastCPU.classList.toggle("reverseFromRight");
 
     function hideBothPlays() {
@@ -304,7 +304,8 @@ function hideLastPlay() {
 
 const buttons = document.querySelector("#buttons");
 
-buttons.addEventListener("click", getPlayerSelection, {once: true});
+function startListening() {buttons.addEventListener("click", getPlayerSelection, {once: true})};
+startListening();
 
 function getPlayerSelection(e) {
 
@@ -339,7 +340,9 @@ function getPlayerSelection(e) {
     setTimeout(removeCountdown, 4700);
     setTimeout(hideSelection, 5200);
     setTimeout(translateUp, 5300);
+    setTimeout(toggleStartText, 5300);
 
+    setTimeout(startListening, 5600); 
 }
 
 // need round to reset fresh with no player selection until another click is heard
