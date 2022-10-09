@@ -106,10 +106,9 @@ a {
 }
 
 #arena h1 {
-    color: white;
     font-size: 2em;
     font-weight: 50;
-    opacity: .9;
+    opacity: .8;
     animation: fadeIn 1s infinite alternate;
     -webkit-animation: fadeIn 1s infinite alternate;
     -ms-animation: fadeIn 1s infinite alternate;
@@ -118,12 +117,18 @@ a {
 
 #arenaLeft {
     margin-left: 5px;
+    color: #2C6A5F;
+}
+
+#arenaRight {
+    color: #A56C35;
 }
 
 .playerArena {
     filter: invert(71%) sepia(65%) saturate(339%) hue-rotate(120deg) brightness(82%) contrast(92%);
     -webkit-animation: fromLeft 0.5s both;
     animation: fromLeft 0.5s both;
+    height: 15.5em;
 }
 
 @keyframes fromLeft {
@@ -143,6 +148,7 @@ a {
     filter: invert(91%) sepia(97%) saturate(280%) hue-rotate(331deg) brightness(300%) contrast(95%);
     -webkit-animation: fromRight 0.5s both;
     animation: fromRight 0.5s both;
+    height: 15.5em;   
 }
 
 @keyframes fromRight {
@@ -156,10 +162,6 @@ a {
         transform: translateX(0) rotate(-90deg);
         opacity: .7;
     }
-}
-
-.arenaImage {
-    height: 15em;
 }
 
 #versus {
