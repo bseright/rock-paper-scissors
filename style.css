@@ -66,6 +66,11 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+    transition: all .5s;
+}
+
+a:hover {
+    color: #f74356;
 }
 
 #me img {
@@ -120,7 +125,7 @@ a {
 }
 
 .arenaColumn p {
-    font-size: 7.5em;
+    font-size: 7.2em;
     font-weight: 500;
     letter-spacing: 1px;
     color: #fa673e00;
@@ -131,12 +136,24 @@ a {
 }
 
 .arenaColumn button {
-    background-color: rgba(255, 255, 255, 0.644);
-    color: #fa673e00;
-    font-size: 2em;
-    padding: 10px 20px;
-    border: 2px solid white;
+    background-color: transparent;
+    font-family: 'Varela Round', sans-serif;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 15px 20px 12px 20px;
+    border: 11px double white;
     border-radius: 15px;
+    transition: all .5s;
+
+}
+
+.arenaColumn button:hover {
+    color: #f74356;
+    border: 4px solid #f74356;
+    padding: 22px 25px 19px 25px;
+
 }
 
 #arena h1 {
@@ -324,7 +341,7 @@ a {
     -ms-text-stroke: 3px white;
     -o-text-stroke: 3px white;
     font-size: 7em;
-    font-weight: 500;
+    font-weight: bolder;
     text-transform: uppercase;
     margin-top: 45px;
 }

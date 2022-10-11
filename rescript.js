@@ -1,17 +1,17 @@
 const items = ["rock", "paper", "scissors"];
 
-let CPUSelection = getCPUSelection();
+let CPUSelection;
 
 function getCPUSelection() {
-    return items[Math.floor(Math.random() * items.length)];
+    CPUSelection = items[Math.floor(Math.random() * items.length)];
 }
 
 let playerSelection;
 
 let roundWinner;
 
-let playerScore = 4;
-let CPUScore = 4;
+let playerScore = 0;
+let CPUScore = 0;
 
 function changeScore() {
     let grabElement;
@@ -331,7 +331,7 @@ function ifLastRound() {
     lastPara.appendChild(lastText);
 
     let lastButton = document.createElement("button");
-    let buttonText = "Play Again";
+    let buttonText = "PLAY AGAIN";
     let buttonNode = document.createTextNode(buttonText);
     lastButton.appendChild(buttonNode);
 
@@ -346,6 +346,10 @@ function ifLastRound() {
     setTimeout(addLastAlert, 300);  
 }
 
+function checkLastRound() {
+    
+}
+
 // play round upon player selection
 
 const buttons = document.querySelector("#buttons");
@@ -354,6 +358,7 @@ function startListening() {buttons.addEventListener("click", getPlayerSelection,
 startListening();
 
 function getPlayerSelection(e) {
+    getCPUSelection();
 
     if (e.target.matches("#rock")) {
 
@@ -381,8 +386,6 @@ function getPlayerSelection(e) {
     setTimeout(changeScore, 4000);
     setTimeout(hideLastPlay, 4500);
 
-    setTimeout(getCPUSelection, 4525);
-
     setTimeout(removeCountdown, 4700);
     setTimeout(hideSelection, 5200);
 
@@ -397,7 +400,6 @@ function getPlayerSelection(e) {
     
         setTimeout(startListening, 5600); 
     }
-
 }
 
 // need round to reset fresh with no player selection until another click is heard
@@ -406,7 +408,6 @@ function playRound(playerSelection, CPUSelection) {
 
     if (playerSelection === CPUSelection) {
 
-        console.log(`TIE!!! Both parties selected ${playerSelection}!`);
         roundWinner = "tie";
 
     } else if (
@@ -414,16 +415,16 @@ function playRound(playerSelection, CPUSelection) {
         (playerSelection === "rock" && CPUSelection === "scissors") ||
         (playerSelection === "paper" && CPUSelection === "rock") ||
         (playerSelection === "scissors" && CPUSelection === "paper")) {
+
         playerScore = playerScore + 1;
-        console.log(`ROUND WON!!! The CPU selected ${CPUSelection}. One point has been added to your score.`);
         roundWinner = "player";
 
     } else if (
         (playerSelection === "rock" && CPUSelection === "paper") ||
         (playerSelection === "paper" && CPUSelection === "scissors") ||
         (playerSelection === "scissors" && CPUSelection === "rock")) {
+
         CPUScore = CPUScore + 1;
-        console.log(`ROUND LOST!!! The CPU selected ${CPUSelection}. One point has been added to the CPU's score.`);
         roundWinner = "CPU";
 
     } else {}
