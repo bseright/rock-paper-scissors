@@ -10,8 +10,8 @@ let playerSelection;
 
 let roundWinner;
 
-let playerScore = 0;
-let CPUScore = 0;
+let playerScore = 4;
+let CPUScore = 4;
 
 function changeScore() {
     let grabElement;
@@ -300,6 +300,52 @@ function hideLastPlay() {
     setTimeout(hideBothPlays, 500);
 }
 
+// create last round alert and style
+
+function ifLastRound() {
+    let arena = document.querySelector("#arena");
+    let arenaItems = arena.querySelectorAll(":scope > *")
+    let versus = document.querySelector("#versus");
+
+    function removeArena() {
+        versus.classList.add("fadeVersus");
+        
+        function removeItems() {
+            arenaItems.forEach(item => {
+            item.remove();
+        })}
+
+        setTimeout(removeItems, 300);
+    }
+
+    let lastPara = document.createElement("p");
+    let lastWords;
+
+    if (roundWinner === "player") {
+        lastWords = 'YOU WIN!'
+    } else {
+        lastWords = 'YOU LOST!'
+    }
+
+    let lastText = document.createTextNode(lastWords);
+    lastPara.appendChild(lastText);
+
+    let lastButton = document.createElement("button");
+    let buttonText = "Play Again";
+    let buttonNode = document.createTextNode(buttonText);
+    lastButton.appendChild(buttonNode);
+
+    function addLastAlert() {
+        arena.classList.add("arenaColumn");
+        arena.appendChild(lastPara);
+        arena.appendChild(lastButton);
+    }
+    
+    removeArena();
+
+    setTimeout(addLastAlert, 300);  
+}
+
 // play round upon player selection
 
 const buttons = document.querySelector("#buttons");
@@ -339,10 +385,19 @@ function getPlayerSelection(e) {
 
     setTimeout(removeCountdown, 4700);
     setTimeout(hideSelection, 5200);
-    setTimeout(translateUp, 5300);
-    setTimeout(toggleStartText, 5300);
 
-    setTimeout(startListening, 5600); 
+    if (playerScore === 5 || CPUScore === 5) {
+
+        setTimeout(ifLastRound, 5300)
+
+    } else {
+
+        setTimeout(translateUp, 5300);
+        setTimeout(toggleStartText, 5300);
+    
+        setTimeout(startListening, 5600); 
+    }
+
 }
 
 // need round to reset fresh with no player selection until another click is heard
@@ -373,5 +428,3 @@ function playRound(playerSelection, CPUSelection) {
 
     } else {}
 }
-
-

@@ -46,7 +46,7 @@ body {
 
 #me {
     display: flex;
-    gap: 22px;
+    gap: 20px;
     font-size: .8em;
     opacity: .7;
     margin-top: 5px;
@@ -59,6 +59,7 @@ body {
 #me h3 {
     font-weight: bold;
     font-size: 1.1em;
+    letter-spacing: 1px;
     color: #2C6A5F;
 }
 
@@ -97,12 +98,45 @@ a {
 
 #arena {
     display: flex;
-    gap: 150px;
     flex: 1;
+}
+
+.rowGap {
+    gap: 150px;
+}
+
+.arenaColumn {
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    animation: fadeIn .8s ease-in;
+    -webkit-animation: fadeIn .8s ease-in;
+    -ms-animation: fadeIn .8s ease-in;
+    -o-animation: fadeIn .8s ease-in;
 }
 
 @keyframes fadeIn { 
     from {opacity: 0} 
+}
+
+.arenaColumn p {
+    font-size: 7em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fa673e00;
+    -webkit-text-stroke: 1px white;
+    -ms-text-stroke: 1px white;
+    -o-text-stroke: 1px white;
+    margin: 0;
+}
+
+.arenaColumn button {
+    background-color: rgba(255, 255, 255, 0.644);
+    color: #fa673e00;
+    font-size: 2em;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 15px;
 }
 
 #arena h1 {
@@ -207,13 +241,27 @@ a {
 }
 
 #versus {
-    height: 15em;
+    height: 13em;
     -webkit-transform: rotate(24deg);
     -ms-transform: rotate(24deg);
     -o-transform: rotate(24deg);
     transform: rotate(24deg);
     filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(287deg) brightness(105%) contrast(101%);
     opacity: .85;
+}
+
+.fadeVersus {
+    -webkit-animation: fadeVersus .3s;
+    animation: fadeVersus .3s;
+}
+
+@keyframes fadeVersus {
+    0% {
+        opacity: .85;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .versusNoText {
