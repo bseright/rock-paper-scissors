@@ -336,10 +336,10 @@ a:hover {
 }
 
 .countdown {
-    color: #fa673e00;
-    -webkit-text-stroke: 3px white;
-    -ms-text-stroke: 3px white;
-    -o-text-stroke: 3px white;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    -ms-text-stroke: 1px white;
+    -o-text-stroke: 1px white;
     font-size: 7em;
     font-weight: bolder;
     text-transform: uppercase;
