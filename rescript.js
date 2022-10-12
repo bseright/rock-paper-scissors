@@ -10,8 +10,8 @@ let playerSelection;
 
 let roundWinner;
 
-let playerScore = 0;
-let CPUScore = 0;
+let playerScore = 4;
+let CPUScore = 4;
 
 function changeScore() {
     let grabElement;
@@ -331,6 +331,7 @@ function ifLastRound() {
     lastPara.appendChild(lastText);
 
     let lastButton = document.createElement("button");
+    lastButton.classList.add("refreshButton");
     let buttonText = "PLAY AGAIN";
     let buttonNode = document.createTextNode(buttonText);
     lastButton.appendChild(buttonNode);
@@ -346,8 +347,15 @@ function ifLastRound() {
     setTimeout(addLastAlert, 300);  
 }
 
-function checkLastRound() {
-    
+function refreshButton() {
+
+    function refreshPage() {
+        document.location.reload(true);
+    }
+
+    const refreshButton = document.querySelector(".refreshButton");
+    refreshButton.addEventListener("click", refreshPage, {once: true})
+
 }
 
 // play round upon player selection
@@ -391,7 +399,8 @@ function getPlayerSelection(e) {
 
     if (playerScore === 5 || CPUScore === 5) {
 
-        setTimeout(ifLastRound, 5300)
+        setTimeout(ifLastRound, 5300);
+        setTimeout(refreshButton, 5700);
 
     } else {
 
