@@ -320,11 +320,14 @@ function ifLastRound() {
 
     let lastPara = document.createElement("p");
     let lastWords;
+    let buttonText;
 
     if (roundWinner === "player") {
-        lastWords = 'YOU WIN!'
+        lastWords = "YOU WIN!";
+        buttonText = "PLAY AGAIN";
     } else {
-        lastWords = 'YOU LOST!'
+        lastWords = "YOU LOST!";
+        buttonText = "TRY AGAIN";
     }
 
     let lastText = document.createTextNode(lastWords);
@@ -332,7 +335,7 @@ function ifLastRound() {
 
     let lastButton = document.createElement("button");
     lastButton.classList.add("refreshButton");
-    let buttonText = "PLAY AGAIN";
+
     let buttonNode = document.createTextNode(buttonText);
     lastButton.appendChild(buttonNode);
 
