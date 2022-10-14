@@ -11,8 +11,6 @@ function removeFade() {
 
 setTimeout(removeFade, 400);
 
-firstTranslateUp();
-
 // 
 
 let CPUSelection;
