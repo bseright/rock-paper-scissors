@@ -1,5 +1,18 @@
 const items = ["rock", "paper", "scissors"];
 
+// add fade for initial load and subsequent refreshes
+
+let initialFade = document.querySelector("#wrapper");
+initialFade.classList.add("fadeIn");
+
+function removeFade() {
+    initialFade.classList.remove("fadeIn");
+}
+
+setTimeout(removeFade, 400);
+
+// 
+
 let CPUSelection;
 
 function getCPUSelection() {
@@ -10,8 +23,8 @@ let playerSelection;
 
 let roundWinner;
 
-let playerScore = 0;
-let CPUScore = 0;
+let playerScore = 4;
+let CPUScore = 4;
 
 function changeScore() {
     let grabElement;
@@ -207,6 +220,9 @@ function removeCountdown() {
     setTimeout(hideCountdown, 500);
 }
 
+// preload images to avoid delays in prepend/append
+
+
 // append and animate player and CPU selection 
 
 function showPlayerSelection() {
@@ -392,6 +408,7 @@ function getPlayerSelection(e) {
     // the images translation off screen takes .4s - setting timeout of 400ms to avoid two elements in #buttons
     setTimeout(hideSelection, 300);
     setTimeout(showAlert, 300);
+    
     setTimeout(showPlayerSelection, 2250);
     setTimeout(showCPUSelection, 2250);
     setTimeout(changeScore, 4000);
