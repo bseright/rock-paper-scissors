@@ -370,9 +370,9 @@ a:hover:after {
 
 .countdown {
     color: transparent;
-    -webkit-text-stroke: 1px white;
-    -ms-text-stroke: 1px white;
-    -o-text-stroke: 1px white;
+    -webkit-text-stroke: .5px white;
+    -ms-text-stroke: .5px white;
+    -o-text-stroke: .5px white;
     font-size: 7em;
     font-weight: bolder;
     text-transform: uppercase;
