@@ -4,9 +4,12 @@ const items = ["rock", "paper", "scissors"];
 
 let initialTranslate = document.querySelectorAll(".selection")
 
-initialTranslate.forEach(buttons => {
+function initializeSelection() {initialTranslate.forEach(buttons => {
     buttons.classList.remove("translateDown");
-})
+    buttons.classList.remove("firstAnimation")
+})}
+
+setTimeout(initializeSelection, 100);
 
 // add fade for initial load and subsequent refreshes
 
@@ -31,8 +34,8 @@ let playerSelection;
 
 let roundWinner;
 
-let playerScore = 0;
-let CPUScore = 0;
+let playerScore = 4;
+let CPUScore = 4;
 
 function changeScore() {
     let grabElement;
@@ -75,14 +78,10 @@ function changeScore() {
 function toggleStartText() {
 
     let blinkingText = document.querySelectorAll(".blink");
-    let nudgeRight = document.querySelector("#versus");
    
     blinkingText.forEach(text => {
         text.classList.toggle("hidden");
     })
-
-    // center alignment is off with blinking text removed - repositioning here
-    nudgeRight.classList.toggle("versusNoText");
 }
 
 // translate button images off-screen

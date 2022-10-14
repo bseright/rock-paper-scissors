@@ -129,7 +129,7 @@ a:hover:after {
 }
 
 .rowGap {
-    gap: 120px;
+    gap: 450px;
 }
 
 .arenaColumn {
@@ -195,7 +195,6 @@ a:hover:after {
 }
 
 #arenaLeft {
-    margin-left: 17px;
     color: #2C6A5F;
 }
 
@@ -288,6 +287,8 @@ a:hover:after {
 #versus {
     height: 15em;
     opacity: .85;
+    position: absolute;
+    margin-left: 6.5px;
 }
 
 .fadeVersus {
@@ -302,10 +303,6 @@ a:hover:after {
     100% {
         opacity: 0;
     }
-}
-
-.versusNoText {
-    margin-left: 13px;
 }
 
 #buttons {
@@ -342,6 +339,10 @@ a:hover:after {
     -ms-transform: translateY(300px);
     -o-transform: translateY(300px);
     transform: translateY(300px);
+}
+
+.firstAnimation {
+    transition: all .6s;
 }
 
 .translateUp {
