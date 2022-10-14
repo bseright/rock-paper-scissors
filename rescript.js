@@ -1,5 +1,13 @@
 const items = ["rock", "paper", "scissors"];
 
+// start page load with selection buttons beneath for translate up effect
+
+let initialTranslate = document.querySelectorAll(".selection")
+
+initialTranslate.forEach(buttons => {
+    buttons.classList.remove("translateDown");
+})
+
 // add fade for initial load and subsequent refreshes
 
 let initialFade = document.querySelector("#wrapper");

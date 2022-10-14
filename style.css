@@ -84,8 +84,8 @@ a:after {
     width: 100%;
     transform: scaleX(0);
     height: 2px;
-    bottom: -2px;
-    left: 0;
+    bottom: -3px;
+    left: -1px;
     background-color: white;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
@@ -129,7 +129,7 @@ a:hover:after {
 }
 
 .rowGap {
-    gap: 150px;
+    gap: 120px;
 }
 
 .arenaColumn {
@@ -195,7 +195,7 @@ a:hover:after {
 }
 
 #arenaLeft {
-    margin-left: 16px;
+    margin-left: 17px;
     color: #2C6A5F;
 }
 
@@ -286,12 +286,7 @@ a:hover:after {
 }
 
 #versus {
-    height: 13em;
-    -webkit-transform: rotate(24deg);
-    -ms-transform: rotate(24deg);
-    -o-transform: rotate(24deg);
-    transform: rotate(24deg);
-    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(287deg) brightness(105%) contrast(101%);
+    height: 15em;
     opacity: .85;
 }
 
@@ -310,12 +305,12 @@ a:hover:after {
 }
 
 .versusNoText {
-    margin-left: 12.5px;
+    margin-left: 13px;
 }
 
 #buttons {
     height: 275px;
-    gap: 20px;
+    gap: 40px;
     overflow-y: hidden;
 }
 
@@ -326,11 +321,12 @@ a:hover:after {
 #rock {
     margin-top: 32px;
     margin-left: 30px;
+    margin-right: -10px;
 }
 
 .selection {
     transition: transform .3s ease-in-out;
-    height: 25em;
+    height: 23em;
 }
 
 .hoverOnly:hover {
