@@ -349,10 +349,15 @@ a:hover:after {
 }
 
 .translateUp {
+    transition: transform .3s ease-in-out;
     -webkit-transform: translateY(-300px);
     -ms-transform: translateY(-300px);
     -o-transform: translateY(-300px);
     transform: translateY(-300px);
+}
+
+@keyframes firstTranslateUp {
+    from {transition: translateY(300px);}
 }
 
 .hidden {
