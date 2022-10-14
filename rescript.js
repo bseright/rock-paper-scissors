@@ -25,8 +25,8 @@ let playerSelection;
 
 let roundWinner;
 
-let playerScore = 4;
-let CPUScore = 4;
+let playerScore = 0;
+let CPUScore = 0;
 
 function changeScore() {
     let grabElement;
