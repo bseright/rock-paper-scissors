@@ -140,10 +140,6 @@ function showAlert() {
         thirdHeader.remove();
     }
 
-    function removeLastHeader() {
-        lastHeader.remove();
-    }
-
     // creating first header "Rock" with grow animation then hidden
 
     let firstHeader = document.createElement("h1");
