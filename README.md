@@ -1,4 +1,4 @@
-This is an animated of Rock, Paper, Scissors.
+This is an animated game of Rock, Paper, Scissors.
 
 What I learned doing this project: 
 
