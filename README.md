@@ -29,7 +29,7 @@
 
 ## Room for Improvement
 - Odd display errors on text-stroke between operating systems... Not sure if this is an experimental error.
-- Reduce bloated JS
+- Reduce bloated JS.
 - Mobile-conscious design.
 - Smoother/better animation.
 
