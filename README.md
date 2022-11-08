@@ -25,7 +25,7 @@
 - Javascript
 
 ## Screenshots
-![Example screenshot](images/screenshot.png)
+![Example screenshot](images/screenshot.PNG)
 
 ## Room for Improvement
 - Odd display errors on text-stroke between operating systems... Not sure if this is an experimental error.
