@@ -219,8 +219,8 @@ a:hover:after {
         opacity: 0;
     }
     100% {
-        -webkit-transform: translateX(0) rotate(90deg) scaleX(-1);
-        transform: translateX(0) rotate(90deg) scaleX(-1);
+        -webkit-transform: translateX(0) rotate(89.9deg) scaleX(-1);
+        transform: translateX(0) rotate(89.9deg) scaleX(-1);
         opacity: .7;
     }
 }
@@ -237,8 +237,8 @@ a:hover:after {
         opacity: 0;
     }
     0% {
-        -webkit-transform: translateX(0) rotate(90deg) scaleX(-1);
-        transform: translateX(0) rotate(90deg) scaleX(-1);
+        -webkit-transform: translateX(0) rotate(89.9deg) scaleX(-1);
+        transform: translateX(0) rotate(89.9deg) scaleX(-1);
         opacity: .7;
     }
 }
