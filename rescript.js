@@ -461,3 +461,5 @@ function playRound(playerSelection, CPUSelection) {
 
     } else {}
 }
+
+console.log("Don't even think about cheating. :) BUT if you want to see the 'Replay' screen quicker, feel free to set playerScore and CPUScore = 4. Thanks for playing!");
