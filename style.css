@@ -332,6 +332,7 @@ a:hover:after {
     -ms-transform: translateY(-50px);
     -o-transform: translateY(-50px);
     transform: translateY(-50px);
+    cursor: pointer;
 }
 
 .translateDown {
