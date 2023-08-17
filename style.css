@@ -22,6 +22,7 @@ body {
     height: 200px;
     color: white;
     padding-bottom: 43px;
+    user-select: none;
 }
 
 #header h2 {
@@ -32,6 +33,7 @@ body {
     display: flex;
     align-items: center;
     gap: 30px;
+    user-select: none;
 }
 
 #playerScore {
@@ -182,6 +184,10 @@ a:hover:after {
     padding: 22px 25px 19px 25px;
     letter-spacing: 2px;
     cursor: pointer;
+}
+
+#arena {
+    user-select: none;
 }
 
 #arena h1 {
@@ -376,6 +382,7 @@ a:hover:after {
     font-weight: bolder;
     text-transform: uppercase;
     margin-top: 45px;
+    user-select: none;
 }
 
 .growAlert {
