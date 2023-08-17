@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Varela Round', sans-serif;
-    background-image: linear-gradient(-60deg, #f7b733 50%, #4abdac 50%);
+    background-image: linear-gradient(-60deg, #d77373 50%, #315e95c2 50%);
 }
 
 #wrapper {
@@ -52,7 +52,7 @@ body {
 }
 
 #me h3:first-child {
-    margin-left: -22px;
+    margin-left: 5px;
 }
 
 #me h3 {
@@ -60,7 +60,7 @@ body {
     font-size: .85em;
     letter-spacing: 2px;
     color: white;
-    opacity: .6;
+    opacity: .7;
 }
 
 a {
@@ -195,15 +195,15 @@ a:hover:after {
 }
 
 #arenaLeft {
-    color: #2C6A5F;
+    color: #1f3b5e;
 }
 
 #arenaRight {
-    color: #A56C35;
+    color: #6d3c3c;
 }
 
 .playerArena {
-    filter: invert(71%) sepia(65%) saturate(339%) hue-rotate(120deg) brightness(82%) contrast(92%); 
+    filter: invert(21%) sepia(28%) saturate(1068%) hue-rotate(173deg) brightness(30%) contrast(97%); 
     height: 15.5em;
 }
 
@@ -244,7 +244,7 @@ a:hover:after {
 }
 
 .CPUArena {
-    filter: invert(91%) sepia(97%) saturate(280%) hue-rotate(331deg) brightness(300%) contrast(95%);
+    filter: invert(24%) sepia(13%) saturate(1892%) hue-rotate(314deg) brightness(40%) contrast(85%);
     height: 15.5em;   
 }
 
@@ -288,7 +288,7 @@ a:hover:after {
     height: 15em;
     opacity: .85;
     position: absolute;
-    margin-left: 6.5px;
+    margin-left: 14px;
 }
 
 .fadeVersus {
