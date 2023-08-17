@@ -203,7 +203,7 @@ a:hover:after {
 }
 
 .playerArena {
-    filter: invert(21%) sepia(28%) saturate(1068%) hue-rotate(173deg) brightness(30%) contrast(97%); 
+    filter: invert(21%) sepia(28%) saturate(1068%) hue-rotate(173deg) brightness(35%) contrast(97%); 
     height: 15.5em;
 }
 
