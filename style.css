@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Varela Round', sans-serif;
-    background-image: linear-gradient(-60deg, #d77373 50%, #315e95c2 50%);
+    background-image: linear-gradient(-60deg, #cd5c5c 50%, #315e95 50%);
 }
 
 #wrapper {
@@ -202,15 +202,15 @@ a:hover:after {
 }
 
 #arenaLeft {
-    color: #1f3b5e;
+    color: #1e395a;
 }
 
 #arenaRight {
-    color: #6d3c3c;
+    color: #6b3b3b;
 }
 
 .playerArena {
-    filter: invert(21%) sepia(28%) saturate(1068%) hue-rotate(173deg) brightness(35%) contrast(97%); 
+    filter: invert(21%) sepia(28%) saturate(1068%) hue-rotate(173deg) brightness(25%) contrast(97%); 
     height: 15.5em;
 }
 
@@ -251,7 +251,7 @@ a:hover:after {
 }
 
 .CPUArena {
-    filter: invert(24%) sepia(13%) saturate(1892%) hue-rotate(314deg) brightness(40%) contrast(85%);
+    filter: invert(24%) sepia(13%) saturate(1892%) hue-rotate(314deg) brightness(33%) contrast(85%);
     height: 15.5em;   
 }
 
